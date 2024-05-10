@@ -1,0 +1,33 @@
+<script>
+	const btn = document.getElementById('btn')
+	const html = document.querySelector('html')
+	let currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+		? 'dark'
+		: 'light'
+
+	if (btn && html) {
+		btn.addEventListener('click', () => {
+			if (
+				window.matchMedia('(prefers-color-scheme: dark)').matches &&
+				currentTheme === 'dark'
+			) {
+				currentTheme = 'light'
+				html.style.setProperty('color-scheme', currentTheme)
+			} else {
+				currentTheme = currentTheme === 'light' ? 'dark' : 'light'
+				html.style.setProperty('color-scheme', currentTheme)
+			}
+		})
+	}
+</script>
+
+<button id='btn'></button>
+<style>
+	button {
+		width: 3px;
+		height: 3px;
+		margin: 0;
+		padding: 1rem;
+		border-radius: 50%;
+	}
+</style>
