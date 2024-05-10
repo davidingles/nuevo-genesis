@@ -31,7 +31,7 @@ const { title } = Astro.props
 	}
 	main > * {
 		box-sizing: border-box;
-		/* border: black 1px solid; */
+		border: red 1px solid;
 	}
 	aside {
 		grid-area: aside;
@@ -41,7 +41,10 @@ const { title } = Astro.props
 	article {
 		grid-area: article;
 		overflow-y: hidden;
-		background-color: color-mix(in srgb, var(--color-background-l), black 3%);
+		background-color: light-dark(
+			color-mix(in srgb, var(--color-background-l), black 9%),
+			color-mix(in srgb, var(--color-background-d), white 9%)
+		);
 	}
 	footer {
 		grid-area: footer;
