@@ -1,12 +1,15 @@
 ---
 import LogoAuxi from '../components/icons/LogoAuxi.astro'
+import BtnMenu from './BtnMenu.astro'
 ---
 
 <main>
-	<div>
+	<div class='logo'>
 		<LogoAuxi />
 	</div>
-	<h2>aside</h2>
+	<div>
+		<BtnMenu />
+	</div>
 </main>
 
 <style>
@@ -19,7 +22,8 @@ import LogoAuxi from '../components/icons/LogoAuxi.astro'
 	img {
 		padding: 1rem;
 	}
-	div {
+	.logo {
+		margin: 1rem 0;
 		width: 80%;
 		height: auto;
 	}

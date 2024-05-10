@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro'
 import Aside from '../components/Aside.astro'
 import Footer from '../components/Footer.astro'
 import Section from '../components/Section.astro'
+import BtnTheme from '../components/BtnTheme.astro'
+
 interface Props {
 	title: string
 }
@@ -13,7 +15,15 @@ const { title } = Astro.props
 <Layout title='Auxiliar Manipuladora del Cartón'>
 	<main>
 		<aside><Aside /></aside>
-		<article><slot name='article' /></article>
+		<header>
+			<h1>AUXILIAR MANIPULADORA DEL CARTÓN</h1>
+			<div class='btn'>
+				<BtnTheme />
+			</div>
+		</header>
+		<article>
+			<slot name='article' />
+		</article>
 		<footer><Footer /></footer>
 		<section><Section /></section>
 	</main>
@@ -23,17 +33,18 @@ const { title } = Astro.props
 		min-height: 100vh;
 		display: grid;
 		grid-template-areas:
+			'aside header'
 			'aside article'
 			'footer footer'
 			'section section';
 		grid-template-columns: 250px 1fr;
-		grid-template-rows: 1fr auto;
+		grid-template-rows: auto 1fr auto;
 		box-sizing: border-box;
 		/* border:i blue 2px solid; */
 	}
 	main > * {
 		box-sizing: border-box;
-		border: red 1px solid;
+		/* border: red 1px solid; */
 	}
 	aside {
 		grid-area: aside;
@@ -52,6 +63,33 @@ const { title } = Astro.props
 		grid-area: footer;
 	}
 	section {
+		background-color: light-dark(rgb(222, 222, 222), rgb(22, 22, 33));
 		grid-area: section;
+	}
+	header {
+		grid-area: header;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		background-color: light-dark(
+			var(--color-background-l),
+			var(--color-background-d)
+		);
+		padding: 0.5rem;
+		h1 {
+			font-family: 'DEMI', system-ui, sans-serif;
+			display: flex;
+			flex: 1;
+			justify-content: center;
+			color: light-dark(var(--auxiliar2), var(--auxiliar1));
+		}
+		.btn {
+			margin: 0 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 </style>
