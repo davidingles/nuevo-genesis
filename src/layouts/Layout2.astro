@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import Aside from '../components/Aside.astro'
+import Footer from '../components/Footer.astro'
+import Section from '../components/Section.astro'
 interface Props {
 	title: string
 }
@@ -12,8 +14,8 @@ const { title } = Astro.props
 	<main>
 		<aside><Aside /></aside>
 		<article><slot name='article' /></article>
-		<footer>foo</footer>
-		<section>sec</section>
+		<footer><Footer /></footer>
+		<section><Section /></section>
 	</main>
 </Layout>
 <style>
