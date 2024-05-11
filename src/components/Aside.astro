@@ -7,8 +7,10 @@ import BtnMenu from './BtnMenu.astro'
 	<div class='logo'>
 		<LogoAuxi />
 	</div>
+	<p>prueba mierda</p>
 	<div>
-		<BtnMenu />
+		<BtnMenu slot='direccion'>Inicio</BtnMenu>
+		<BtnMenu slot='direccion'>Contacto</BtnMenu>
 	</div>
 </main>
 
@@ -26,5 +28,10 @@ import BtnMenu from './BtnMenu.astro'
 		margin: 1rem 0;
 		width: 80%;
 		height: auto;
+	}
+	div {
+		color: white;
+		display: flex;
+		flex-direction: column;
 	}
 </style>

@@ -1,0 +1,51 @@
+<label
+	class='label'
+	for=''
+>
+	<input
+		class='input'
+		type='text'
+		placeholder=''
+	/>
+	<span class='span'>Ingresa tu nombre</span>
+</label>
+
+<style>
+	.label {
+		width: max-content;
+		/* margin: 90px auto; */
+		display: grid;
+		grid-template-areas: 'input';
+	}
+	.input {
+		grid-area: input;
+		width: 300px;
+		height: 50px;
+		font: inherit;
+		border-radius: 10px;
+		border: 1px solid gray;
+		padding: 0.7rem 1.5rem;
+		color: orange;
+	}
+	.span {
+		grid-area: input;
+		z-index: 99;
+		width: max-content;
+		margin-left: 1rem;
+		align-self: center;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		transition: transform 0.2s;
+		transform-origin: center left;
+		pointer-events: none;
+	}
+	.input:where(:focus, :not(:placeholder-shown)) + .span {
+		transform: translateY(-110%) scale(0.8);
+		background-color: white;
+		color: black;
+		padding: 0 1rem;
+		border-radius: 9px;
+		height: 33px;
+	}
+</style>
