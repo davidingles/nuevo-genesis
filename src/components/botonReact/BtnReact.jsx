@@ -27,7 +27,7 @@ export default function BtnReact() {
         Menu.items.map(item => (
           <a
             className={estilos.a}
-            style={{ color: david === item.url ? 'blue' : 'black', backgroundColor: david === item.url ? 'yellow' : 'white' }}
+            style={{ color: (david === item.url) ? 'light-dark(orange,black)' : 'light-dark(green, orange)' }}
             key={item.id}
             href={item.url}
           >
