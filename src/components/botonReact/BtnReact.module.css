@@ -1,0 +1,17 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.a {
+  color: white;
+  text-decoration: none;
+  border: orange 1px solid;
+  border-radius: 5px;
+  margin: 0;
+  padding: 1rem 1rem;
+  background-color: light-dark(red, green);
+}

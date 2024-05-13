@@ -1,12 +1,13 @@
 ---
 import Layout2 from '../layouts/Layout2.astro'
-import InputGoogle from '../components/InputGoogle.astro'
+import Article from '../components/Article.astro'
 ---
 
 <Layout2 title='article'>
 	<main slot='article'>
-		<InputGoogle />
-		<div class='cuerpo'>hola</div>
+		<div>
+			<Article />
+		</div>
 	</main>
 </Layout2>
 
@@ -24,14 +25,7 @@ import InputGoogle from '../components/InputGoogle.astro'
 	main > * {
 		box-sizing: border-box;
 	}
-
-	.cuerpo {
-		display: flex;
-		justify-content: center;
+	div {
+		margin: 3rem;
 	}
 </style>
-
-<!-- background-color: light-dark(
-color-mix(in srgb, var(--color-background-l), black 9%),
-color-mix(in srgb, var(--color-background-d), white 9%)
-); -->

@@ -3,5 +3,13 @@ import Layout2 from '../layouts/Layout2.astro'
 ---
 
 <Layout2 title='Contacto'>
-	<div>DESDE CONTACTO</div>
+	<main slot='article'><h2>Desde Article</h2></main>
 </Layout2>
+
+<style>
+	main {
+		background-color: inherit;
+		padding: 20px;
+		color: orange;
+	}
+</style>

@@ -1,6 +1,7 @@
 ---
-import LogoAuxi from '../components/icons/LogoAuxi.astro'
+import LogoAuxi from './icons/LogoAuxi.astro'
 import BtnMenu from './BtnMenu.astro'
+import BtnReact from './botonReact/BtnReact.jsx'
 ---
 
 <main>
@@ -9,8 +10,11 @@ import BtnMenu from './BtnMenu.astro'
 	</div>
 	<p>prueba mierda</p>
 	<div>
-		<BtnMenu slot='direccion'>Inicio</BtnMenu>
-		<BtnMenu slot='direccion'>Contacto</BtnMenu>
+		<BtnMenu href='/'><p>Inicio</p></BtnMenu>
+		<BtnMenu href='/contacto'><p>Contacto</p></BtnMenu>
+		<BtnMenu href='/arkanoid'><p>Arkanoid</p></BtnMenu>
+		<BtnMenu href='/reloj'><p>Reloj</p></BtnMenu>
+		<BtnReact client:load />
 	</div>
 </main>
 
@@ -20,6 +24,8 @@ import BtnMenu from './BtnMenu.astro'
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		padding: 0;
+		margin: 0;
 	}
 	img {
 		padding: 1rem;
@@ -33,5 +39,11 @@ import BtnMenu from './BtnMenu.astro'
 		color: white;
 		display: flex;
 		flex-direction: column;
+		gap: 1rem;
+		width: 77%;
+		justify-content: center;
+	}
+	p {
+		padding: 0 1rem;
 	}
 </style>
