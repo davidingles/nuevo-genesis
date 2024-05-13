@@ -1,4 +1,5 @@
 import estilos from './BtnReact.module.css'
+import { useEffect, useState } from 'react'
 
 const Menu = {
   items: [
@@ -10,13 +11,23 @@ const Menu = {
 }
 
 export default function BtnReact() {
+  const [currentUrl, setCurrentUrl] = useState('/')
+  let david = ''
+
+  useEffect(() => {
+    const url2 = window.location.pathname
+    setCurrentUrl(url2)
+  }, [currentUrl])
+
+  david = currentUrl
 
   return (
-    <main className={estilos.main}>
+    <main className={estilos.main} >
       {
         Menu.items.map(item => (
           <a
             className={estilos.a}
+            style={{ color: david === item.url ? 'blue' : 'black' }}
             key={item.id}
             href={item.url}
           >
@@ -24,6 +35,6 @@ export default function BtnReact() {
           </a>
         ))
       }
-    </main>
+    </main >
   )
 }
